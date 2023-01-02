@@ -1,0 +1,23 @@
+name: Delete twitter like every month
+
+on:
+  schedule:
+    - cron: "0 0 1 * *" # UTC time
+  workflow_dispatch:
+
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env: # Or as an environment variable
+      CONSUMER_API_KEY: ${{ secrets.CONSUMER_API_KEY }}
+      CONSUMER_API_SECRET: ${{ secrets.CONSUMER_API_SECRET }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_SECRET_TOKEN: ${{ secrets.ACCESS_SECRET_TOKEN }}
+      TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - run: python main.py
