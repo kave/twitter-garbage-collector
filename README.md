@@ -1,2 +1,3 @@
-# boilerplate-repo
-Boilerplate generic starter repo
+# Twitter Garbage Collector
+
+Twitter scripts that run on a cron schedule to clean up after myself

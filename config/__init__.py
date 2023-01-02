@@ -1,5 +1,4 @@
 import os
-from distutils.util import strtobool
 from os.path import dirname, join
 
 from dotenv import load_dotenv
@@ -7,17 +6,9 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path, verbose=True)
 
-# Server
-HOST = os.environ.get('HOST')
-PORT = int(os.environ.get('PORT'))
-ENV = os.environ.get('ENV')
-IS_LOCAL = ENV == 'local'
-IS_HEROKU = ENV == 'heroku'
-DEBUG = strtobool(os.environ.get('DEBUG'))
-
-# Databases
-DB_HOST = os.environ.get('DB_HOST')
-DB_PORT = os.environ.get('DB_PORT')
-DB_DATABASE = os.environ.get('DB_DATABASE')
-DB_USERNAME = os.environ.get('DB_USERNAME')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
+# Twitter
+CONSUMER_API_KEY = os.environ.get('CONSUMER_API_KEY')
+CONSUMER_API_SECRET = os.environ.get('CONSUMER_API_SECRET')
+ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
+ACCESS_SECRET_TOKEN = os.environ.get('ACCESS_SECRET_TOKEN')
+TWITTER_USERNAME = os.environ.get('TWITTER_USERNAME')
